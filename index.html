@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oh kuurwa!</title>
+    <script src="node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <input type="button" id="kurwa" />
+    <script>
+        var socket = io('http://localhost:3000');
+        function Kurwa(kurwa) {
+            socket.emit('push', kurwa);
+        }
+        $(function () {
+            $('#kurwa').on('click', function(){
+                Kurwa('Kurwa!');
+            });
+        });
+    </script>
+</body>
+</html>
